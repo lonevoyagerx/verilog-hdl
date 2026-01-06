@@ -1,0 +1,70 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000001f5ab666590 .scope module, "t_flipflop_tb" "t_flipflop_tb" 2 1;
+ .timescale 0 0;
+v000001f5ab61bcd0_0 .var "clk", 0 0;
+v000001f5ab61bd70_0 .net "q", 0 0, v000001f5ab632f30_0;  1 drivers
+v000001f5ab61be10_0 .net "qbar", 0 0, L_000001f5ab633360;  1 drivers
+v000001f5ab61beb0_0 .var "t", 0 0;
+S_000001f5ab666720 .scope module, "uut" "t_flipflop" 2 6, 3 1 0, S_000001f5ab666590;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "t";
+    .port_info 1 /INPUT 1 "clk";
+    .port_info 2 /OUTPUT 1 "q";
+    .port_info 3 /OUTPUT 1 "qbar";
+L_000001f5ab633360 .functor NOT 1, v000001f5ab632f30_0, C4<0>, C4<0>, C4<0>;
+v000001f5ab618e10_0 .net "clk", 0 0, v000001f5ab61bcd0_0;  1 drivers
+v000001f5ab632f30_0 .var "q", 0 0;
+v000001f5ab6668b0_0 .net "qbar", 0 0, L_000001f5ab633360;  alias, 1 drivers
+v000001f5ab666950_0 .net "t", 0 0, v000001f5ab61beb0_0;  1 drivers
+E_000001f5ab61c130 .event posedge, v000001f5ab618e10_0;
+    .scope S_000001f5ab666720;
+T_0 ;
+    %wait E_000001f5ab61c130;
+    %load/vec4 v000001f5ab666950_0;
+    %inv;
+    %assign/vec4 v000001f5ab632f30_0, 0;
+    %jmp T_0;
+    .thread T_0;
+    .scope S_000001f5ab666590;
+T_1 ;
+    %delay 5, 0;
+    %load/vec4 v000001f5ab61bcd0_0;
+    %inv;
+    %store/vec4 v000001f5ab61bcd0_0, 0, 1;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_000001f5ab666590;
+T_2 ;
+    %vpi_call 2 11 "$dumpfile", "t_flipflop.vcd" {0 0 0};
+    %vpi_call 2 12 "$dumpvars", 32'sb00000000000000000000000000000000, S_000001f5ab666590 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001f5ab61bcd0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001f5ab61beb0_0, 0, 1;
+    %delay 12, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001f5ab61beb0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001f5ab61beb0_0, 0, 1;
+    %delay 15, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001f5ab61beb0_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 19 "$finish" {0 0 0};
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "t_flipflop_tb.v";
+    "t_flipflop.v";

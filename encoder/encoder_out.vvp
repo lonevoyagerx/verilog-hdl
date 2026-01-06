@@ -1,0 +1,58 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000002073b865660 .scope module, "encoder_tb" "encoder_tb" 2 1;
+ .timescale 0 0;
+v000002073b8640f0_0 .var "d", 3 0;
+v000002073b864190_0 .net "y", 1 0, L_000002073b864370;  1 drivers
+S_000002073b8657f0 .scope module, "uut" "encoder" 2 5, 3 1 0, S_000002073b865660;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "d";
+    .port_info 1 /OUTPUT 2 "y";
+L_000002073b8333e0 .functor OR 1, L_000002073b864230, L_000002073b8642d0, C4<0>, C4<0>;
+L_000002073b833610 .functor OR 1, L_000002073b8ac650, L_000002073b8abbb0, C4<0>, C4<0>;
+v000002073b865980_0 .net *"_ivl_12", 0 0, L_000002073b8ac650;  1 drivers
+v000002073b832f30_0 .net *"_ivl_14", 0 0, L_000002073b8abbb0;  1 drivers
+v000002073b865a20_0 .net *"_ivl_15", 0 0, L_000002073b833610;  1 drivers
+v000002073b81ada0_0 .net *"_ivl_3", 0 0, L_000002073b864230;  1 drivers
+v000002073b81ae40_0 .net *"_ivl_5", 0 0, L_000002073b8642d0;  1 drivers
+v000002073b81bdc0_0 .net *"_ivl_6", 0 0, L_000002073b8333e0;  1 drivers
+v000002073b81be60_0 .net "d", 3 0, v000002073b8640f0_0;  1 drivers
+v000002073b81bf00_0 .net "y", 1 0, L_000002073b864370;  alias, 1 drivers
+L_000002073b864230 .part v000002073b8640f0_0, 1, 1;
+L_000002073b8642d0 .part v000002073b8640f0_0, 3, 1;
+L_000002073b864370 .concat8 [ 1 1 0 0], L_000002073b8333e0, L_000002073b833610;
+L_000002073b8ac650 .part v000002073b8640f0_0, 2, 1;
+L_000002073b8abbb0 .part v000002073b8640f0_0, 3, 1;
+    .scope S_000002073b865660;
+T_0 ;
+    %vpi_call 2 8 "$dumpfile", "encoder.vcd" {0 0 0};
+    %vpi_call 2 9 "$dumpvars", 32'sb00000000000000000000000000000000, S_000002073b865660 {0 0 0};
+    %vpi_call 2 10 "$monitor", "d=%b y=%b", v000002073b8640f0_0, v000002073b864190_0 {0 0 0};
+    %pushi/vec4 1, 0, 4;
+    %store/vec4 v000002073b8640f0_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 2, 0, 4;
+    %store/vec4 v000002073b8640f0_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 4, 0, 4;
+    %store/vec4 v000002073b8640f0_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 8, 0, 4;
+    %store/vec4 v000002073b8640f0_0, 0, 4;
+    %delay 10, 0;
+    %vpi_call 2 17 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "4_2_encoder_tb.v";
+    "4_2_encoder.v";
