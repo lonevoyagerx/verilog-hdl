@@ -1,0 +1,40 @@
+$date
+	Sat Jan 10 19:30:53 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module odd_parity_gen_tb $end
+$var wire 1 ! p $end
+$var reg 4 " in [3:0] $end
+$scope module uut $end
+$var wire 4 # in [3:0] $end
+$var wire 1 ! p $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b1010 #
+b1010 "
+1!
+$end
+#10
+0!
+b1110 "
+b1110 #
+#20
+1!
+b101 "
+b101 #
+#30
+0!
+b1011 "
+b1011 #
+#40

@@ -1,0 +1,46 @@
+$date
+	Mon Jan 12 08:48:53 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module even_parity_check_tb $end
+$var wire 1 ! error $end
+$var reg 4 " in [3:0] $end
+$var reg 1 # p $end
+$scope module uut $end
+$var wire 1 ! error $end
+$var wire 4 $ in [3:0] $end
+$var wire 1 # p $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b1010 $
+0#
+b1010 "
+0!
+$end
+#10
+0!
+1#
+b1110 "
+b1110 $
+#20
+1!
+0#
+b101 "
+b101 $
+#30
+0!
+1#
+b1011 "
+b1011 $
+#40

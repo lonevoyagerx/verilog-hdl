@@ -1,0 +1,69 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_0000020324b35410 .scope module, "priority_tb" "priority_tb" 2 1;
+ .timescale 0 0;
+v0000020324b33d20_0 .var "d", 3 0;
+v0000020324b33500_0 .net "y", 1 0, L_0000020324b331e0;  1 drivers
+S_0000020324b355a0 .scope module, "uut" "priority_encoder" 2 4, 3 1 0, S_0000020324b35410;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "d";
+    .port_info 1 /OUTPUT 2 "y";
+L_0000020324c071e0 .functor OR 1, L_0000020324b33140, L_0000020324b33960, C4<0>, C4<0>;
+L_0000020324b343d0 .functor NOT 1, L_0000020324b330a0, C4<0>, C4<0>, C4<0>;
+L_0000020324c0b200 .functor AND 1, L_0000020324b343d0, L_0000020324b32f60, C4<1>, C4<1>;
+L_0000020324b33f20 .functor OR 1, L_0000020324b33640, L_0000020324c0b200, C4<0>, C4<0>;
+v0000020324c0b160_0 .net *"_ivl_12", 0 0, L_0000020324b33640;  1 drivers
+v0000020324c06d10_0 .net *"_ivl_14", 0 0, L_0000020324b330a0;  1 drivers
+v0000020324b35730_0 .net *"_ivl_15", 0 0, L_0000020324b343d0;  1 drivers
+v0000020324b357d0_0 .net *"_ivl_18", 0 0, L_0000020324b32f60;  1 drivers
+v0000020324b32b50_0 .net *"_ivl_19", 0 0, L_0000020324c0b200;  1 drivers
+v0000020324b32bf0_0 .net *"_ivl_21", 0 0, L_0000020324b33f20;  1 drivers
+v0000020324b32c90_0 .net *"_ivl_3", 0 0, L_0000020324b33140;  1 drivers
+v0000020324b32d30_0 .net *"_ivl_5", 0 0, L_0000020324b33960;  1 drivers
+v0000020324b32dd0_0 .net *"_ivl_6", 0 0, L_0000020324c071e0;  1 drivers
+v0000020324b32e70_0 .net "d", 3 0, v0000020324b33d20_0;  1 drivers
+v0000020324b33280_0 .net "y", 1 0, L_0000020324b331e0;  alias, 1 drivers
+L_0000020324b33140 .part v0000020324b33d20_0, 2, 1;
+L_0000020324b33960 .part v0000020324b33d20_0, 3, 1;
+L_0000020324b331e0 .concat8 [ 1 1 0 0], L_0000020324b33f20, L_0000020324c071e0;
+L_0000020324b33640 .part v0000020324b33d20_0, 3, 1;
+L_0000020324b330a0 .part v0000020324b33d20_0, 2, 1;
+L_0000020324b32f60 .part v0000020324b33d20_0, 0, 1;
+    .scope S_0000020324b35410;
+T_0 ;
+    %vpi_call 2 7 "$dumpvars", 32'sb00000000000000000000000000000000, S_0000020324b35410 {0 0 0};
+    %vpi_call 2 8 "$monitor", "d=%b y=%b", v0000020324b33d20_0, v0000020324b33500_0 {0 0 0};
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0000020324b33d20_0, 0, 4;
+    %delay 5, 0;
+    %pushi/vec4 9, 0, 4;
+    %store/vec4 v0000020324b33d20_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 3, 0, 4;
+    %store/vec4 v0000020324b33d20_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 13, 0, 4;
+    %store/vec4 v0000020324b33d20_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 5, 0, 4;
+    %store/vec4 v0000020324b33d20_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 4;
+    %store/vec4 v0000020324b33d20_0, 0, 4;
+    %delay 10, 0;
+    %vpi_call 2 18 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "priority_enc_tb.v";
+    "priority_enc.v";

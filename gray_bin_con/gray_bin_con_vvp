@@ -1,0 +1,69 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_0000026df7e0b5a0 .scope module, "gray_bin_con_tb" "gray_bin_con_tb" 2 1;
+ .timescale 0 0;
+v0000026df7e9e500_0 .var "in", 3 0;
+v0000026df7e9e780_0 .net "out", 3 0, L_0000026df7e9db00;  1 drivers
+S_0000026df7e0bcc0 .scope module, "uut" "gray_bin_con" 2 5, 3 1 0, S_0000026df7e0b5a0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 4 "out";
+    .port_info 1 /INPUT 4 "in";
+L_0000026df7e56300 .functor XOR 1, L_0000026df7e9e3c0, L_0000026df7e9e640, C4<0>, C4<0>;
+L_0000026df7e071e0 .functor XOR 1, L_0000026df7e9e6e0, L_0000026df7e9e1e0, C4<0>, C4<0>;
+L_0000026df7e547e0 .functor XOR 1, L_0000026df7e9e5a0, L_0000026df7e9dd80, C4<0>, C4<0>;
+v0000026df7e0be50_0 .net *"_ivl_10", 0 0, L_0000026df7e56300;  1 drivers
+v0000026df7e0bef0_0 .net *"_ivl_15", 0 0, L_0000026df7e9e6e0;  1 drivers
+v0000026df7e06910_0 .net *"_ivl_17", 0 0, L_0000026df7e9e1e0;  1 drivers
+v0000026df7e069b0_0 .net *"_ivl_18", 0 0, L_0000026df7e071e0;  1 drivers
+v0000026df7e06a50_0 .net *"_ivl_24", 0 0, L_0000026df7e9e5a0;  1 drivers
+v0000026df7e06af0_0 .net *"_ivl_26", 0 0, L_0000026df7e9dd80;  1 drivers
+v0000026df7e06b90_0 .net *"_ivl_27", 0 0, L_0000026df7e547e0;  1 drivers
+v0000026df7e9dce0_0 .net *"_ivl_3", 0 0, L_0000026df7e9d9c0;  1 drivers
+v0000026df7e9e460_0 .net *"_ivl_7", 0 0, L_0000026df7e9e3c0;  1 drivers
+v0000026df7e9e140_0 .net *"_ivl_9", 0 0, L_0000026df7e9e640;  1 drivers
+v0000026df7e9da60_0 .net "in", 3 0, v0000026df7e9e500_0;  1 drivers
+v0000026df7e9e320_0 .net "out", 3 0, L_0000026df7e9db00;  alias, 1 drivers
+L_0000026df7e9d9c0 .part v0000026df7e9e500_0, 3, 1;
+L_0000026df7e9e3c0 .part v0000026df7e9e500_0, 3, 1;
+L_0000026df7e9e640 .part v0000026df7e9e500_0, 2, 1;
+L_0000026df7e9e6e0 .part v0000026df7e9e500_0, 2, 1;
+L_0000026df7e9e1e0 .part v0000026df7e9e500_0, 1, 1;
+L_0000026df7e9db00 .concat8 [ 1 1 1 1], L_0000026df7e547e0, L_0000026df7e071e0, L_0000026df7e56300, L_0000026df7e9d9c0;
+L_0000026df7e9e5a0 .part v0000026df7e9e500_0, 1, 1;
+L_0000026df7e9dd80 .part v0000026df7e9e500_0, 0, 1;
+    .scope S_0000026df7e0b5a0;
+T_0 ;
+    %vpi_call 2 9 "$dumpfile", "dump.vcd" {0 0 0};
+    %vpi_call 2 10 "$dumpvars", 32'sb00000000000000000000000000000000, S_0000026df7e0b5a0 {0 0 0};
+    %vpi_call 2 11 "$monitor", "in=%b out=%b", v0000026df7e9e500_0, v0000026df7e9e780_0 {0 0 0};
+    %pushi/vec4 10, 0, 4;
+    %store/vec4 v0000026df7e9e500_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 8, 0, 4;
+    %store/vec4 v0000026df7e9e500_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 5, 0, 4;
+    %store/vec4 v0000026df7e9e500_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 14, 0, 4;
+    %store/vec4 v0000026df7e9e500_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 2, 0, 4;
+    %store/vec4 v0000026df7e9e500_0, 0, 4;
+    %delay 10, 0;
+    %vpi_call 2 19 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "gray_bin_con_tb.v";
+    "gray_bin_con.v";
