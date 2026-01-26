@@ -1,0 +1,75 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_0000026a66135e80 .scope module, "tb_cmos_or_gate" "tb_cmos_or_gate" 2 1;
+ .timescale 0 0;
+v0000026a66145f30_0 .var "a", 0 0;
+v0000026a66086a50_0 .var "b", 0 0;
+v0000026a66086af0_0 .net "y", 0 0, L_0000026a66134aa0;  1 drivers
+S_0000026a6608d210 .scope module, "DUT" "cmos_or_gate" 2 6, 3 15 0, S_0000026a66135e80;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "y";
+v0000026a661360b0_0 .net "a", 0 0, v0000026a66145f30_0;  1 drivers
+v0000026a66145d50_0 .net "b", 0 0, v0000026a66086a50_0;  1 drivers
+v0000026a66145df0_0 .net "nor_out", 0 0, L_0000026a661348e0;  1 drivers
+v0000026a66145e90_0 .net "y", 0 0, L_0000026a66134aa0;  alias, 1 drivers
+S_0000026a6608d3a0 .scope module, "u1" "cmos_nor_gate" 3 21, 3 1 0, S_0000026a6608d210;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "y";
+    .port_info 1 /INPUT 1 "a";
+    .port_info 2 /INPUT 1 "b";
+L_0000026a66145fd0 .functor OR 1, v0000026a66145f30_0, v0000026a66086a50_0, C4<0>, C4<0>;
+L_0000026a661348e0 .functor NOT 1, L_0000026a66145fd0, C4<0>, C4<0>, C4<0>;
+v0000026a66087510_0 .net *"_ivl_0", 0 0, L_0000026a66145fd0;  1 drivers
+v0000026a66134a00_0 .net "a", 0 0, v0000026a66145f30_0;  alias, 1 drivers
+v0000026a66134840_0 .net "b", 0 0, v0000026a66086a50_0;  alias, 1 drivers
+v0000026a6608d530_0 .net "y", 0 0, L_0000026a661348e0;  alias, 1 drivers
+S_0000026a66145bc0 .scope module, "u2" "inverter" 3 22, 3 8 0, S_0000026a6608d210;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /OUTPUT 1 "y";
+L_0000026a66134aa0 .functor NOT 1, L_0000026a661348e0, C4<0>, C4<0>, C4<0>;
+v0000026a6608d5d0_0 .net "a", 0 0, L_0000026a661348e0;  alias, 1 drivers
+v0000026a66136010_0 .net "y", 0 0, L_0000026a66134aa0;  alias, 1 drivers
+    .scope S_0000026a66135e80;
+T_0 ;
+    %vpi_call 2 9 "$dumpfile", "dump.vcd" {0 0 0};
+    %vpi_call 2 10 "$dumpvars", 32'sb00000000000000000000000000000000, S_0000026a66135e80 {0 0 0};
+    %vpi_call 2 11 "$monitor", "a = %b | b = %b | y = %b", v0000026a66145f30_0, v0000026a66086a50_0, v0000026a66086af0_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000026a66145f30_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000026a66086a50_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000026a66145f30_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000026a66086a50_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000026a66145f30_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000026a66086a50_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000026a66145f30_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000026a66086a50_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 18 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "cmos_or_gate_tb.v";
+    "cmos_or_gate.v";
