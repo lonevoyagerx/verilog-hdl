@@ -1,37 +1,66 @@
-`timescale 1ns/1ps
+module tb_counter;
 
-module tb_up_down_counter;
+    reg         clk;
+    reg         aresetn;
+    reg         load;
+    reg  [31:0] loaddata;
+    reg         en;
+    reg         updwn;
+    wire [31:0] count;
 
-    reg clk;
-    reg rst;
-    reg up_down;
-    wire [3:0] count;
-
-     up_down_counter dut (
+     counter dut (
         .clk(clk),
-        .rst(rst),
-        .up_down(up_down),
+        .aresetn(aresetn),
+        .load(load),
+        .loaddata(loaddata),
+        .en(en),
+        .updwn(updwn),
         .count(count)
     );
 
      always #5 clk = ~clk;
 
     initial begin
+         clk      = 0;
+        aresetn  = 0;
+        load     = 0;
+        loaddata = 32'h0;
+        en       = 0;
+        updwn    = 1;
 
-        $dumpfile("dump.vcd");
-        $dumpvars(0,tb_up_down_counter);
-        $monitor("clk = %b rst = %b up_down = %b count = %b",clk,rst,up_down,count);
-         clk = 0;
-        rst = 1;
-        up_down = 1;
+         $dumpfile("counter.vcd");
+        $dumpvars(0, tb_counter);
 
-         #10 rst = 0;
+         $monitor("T=%0t | rstn=%b | load=%b | en=%b | updwn=%b | count=%h",
+                  $time, aresetn, load, en, updwn, count);
 
-         #50 up_down = 1;
+         #3  aresetn = 0;
+        #7  aresetn = 1;
 
-         #50 up_down = 0;
+         #10 load = 1;
+            loaddata = 32'h0000_000A;
+        #10 load = 0;
 
-         #50 $finish;
+          #10 en = 1;
+            updwn = 1;
+        #50;
+
+         updwn = 0;
+        #50;
+
+         en = 0;
+        #20;
+
+         load = 1;
+        loaddata = 32'h0000_00FF;
+        #10 load = 0;
+
+         en = 1;
+        updwn = 1;
+        #30;
+
+        $finish;
     end
 
 endmodule
+
