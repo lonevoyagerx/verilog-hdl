@@ -1,0 +1,6 @@
+VCD info: dumpfile encoder.vcd opened for output.
+d=1000 y=11
+d=0100 y=10
+d=0010 y=01
+d=0001 y=00
+4_2_encoder_tb.v:17: $finish called at 40 (1s)

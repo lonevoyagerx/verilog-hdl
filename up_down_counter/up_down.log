@@ -1,0 +1,26 @@
+VCD info: dumpfile counter.vcd opened for output.
+T=0 | rstn=0 | load=0 | en=0 | updwn=1 | count=00000000
+T=10 | rstn=1 | load=0 | en=0 | updwn=1 | count=00000000
+T=20 | rstn=1 | load=1 | en=0 | updwn=1 | count=00000000
+T=25 | rstn=1 | load=1 | en=0 | updwn=1 | count=0000000a
+T=30 | rstn=1 | load=0 | en=0 | updwn=1 | count=0000000a
+T=40 | rstn=1 | load=0 | en=1 | updwn=1 | count=0000000a
+T=45 | rstn=1 | load=0 | en=1 | updwn=1 | count=0000000b
+T=55 | rstn=1 | load=0 | en=1 | updwn=1 | count=0000000c
+T=65 | rstn=1 | load=0 | en=1 | updwn=1 | count=0000000d
+T=75 | rstn=1 | load=0 | en=1 | updwn=1 | count=0000000e
+T=85 | rstn=1 | load=0 | en=1 | updwn=1 | count=0000000f
+T=90 | rstn=1 | load=0 | en=1 | updwn=0 | count=0000000f
+T=95 | rstn=1 | load=0 | en=1 | updwn=0 | count=0000000e
+T=105 | rstn=1 | load=0 | en=1 | updwn=0 | count=0000000d
+T=115 | rstn=1 | load=0 | en=1 | updwn=0 | count=0000000c
+T=125 | rstn=1 | load=0 | en=1 | updwn=0 | count=0000000b
+T=135 | rstn=1 | load=0 | en=1 | updwn=0 | count=0000000a
+T=140 | rstn=1 | load=0 | en=0 | updwn=0 | count=0000000a
+T=160 | rstn=1 | load=1 | en=0 | updwn=0 | count=0000000a
+T=165 | rstn=1 | load=1 | en=0 | updwn=0 | count=000000ff
+T=170 | rstn=1 | load=0 | en=1 | updwn=1 | count=000000ff
+T=175 | rstn=1 | load=0 | en=1 | updwn=1 | count=00000100
+T=185 | rstn=1 | load=0 | en=1 | updwn=1 | count=00000101
+T=195 | rstn=1 | load=0 | en=1 | updwn=1 | count=00000102
+up_down_counter_tb.v:62: $finish called at 200 (1s)

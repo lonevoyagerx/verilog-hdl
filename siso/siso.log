@@ -1,0 +1,14 @@
+VCD info: dumpfile dump.vcd opened for output.
+clk = 0 rst = 1 sin = 1 sout = 0
+clk = 1 rst = 0 sin = 0 sout = 0
+clk = 0 rst = 0 sin = 0 sout = 0
+clk = 1 rst = 1 sin = 1 sout = 0
+clk = 0 rst = 1 sin = 1 sout = 0
+clk = 1 rst = 1 sin = 1 sout = 0
+clk = 0 rst = 1 sin = 1 sout = 0
+clk = 1 rst = 1 sin = 1 sout = 0
+clk = 0 rst = 1 sin = 1 sout = 0
+clk = 1 rst = 1 sin = 0 sout = 0
+clk = 0 rst = 1 sin = 0 sout = 0
+siso_tb.v:26: $finish called at 55 (1s)
+clk = 1 rst = 1 sin = 0 sout = 0

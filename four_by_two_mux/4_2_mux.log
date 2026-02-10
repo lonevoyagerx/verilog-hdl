@@ -1,0 +1,10 @@
+VCD info: dumpfile mux4_1.vcd opened for output.
+Time=0 | sel=00 | a=0 b=1 c=0 d=1 | z=0
+Time=10 | sel=01 | a=0 b=1 c=0 d=1 | z=1
+Time=20 | sel=10 | a=0 b=1 c=0 d=1 | z=0
+Time=30 | sel=11 | a=0 b=1 c=0 d=1 | z=1
+Time=40 | sel=00 | a=1 b=0 c=1 d=0 | z=1
+Time=50 | sel=01 | a=1 b=0 c=1 d=0 | z=0
+Time=60 | sel=10 | a=1 b=0 c=1 d=0 | z=1
+Time=70 | sel=11 | a=1 b=0 c=1 d=0 | z=0
+tb.v:35: $finish called at 80 (1s)
