@@ -1,0 +1,48 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x62c99f51b580 .scope module, "top" "top" 2 2;
+ .timescale 0 0;
+v0x62c99f52cb50_0 .var "a", 15 0;
+v0x62c99f52cc10_0 .var "b", 15 0;
+v0x62c99f52cce0_0 .net "c", 16 0, L_0x62c99f52d090;  1 drivers
+S_0x62c99f51b710 .scope module, "DUT" "adder" 2 9, 3 1 0, S_0x62c99f51b580;
+ .timescale 0 0;
+    .port_info 0 /INPUT 16 "a";
+    .port_info 1 /INPUT 16 "b";
+    .port_info 2 /OUTPUT 17 "c";
+v0x62c99f509780_0 .net *"_ivl_0", 16 0, L_0x62c99f52cde0;  1 drivers
+L_0x7fea83891018 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x62c99f52c560_0 .net *"_ivl_3", 0 0, L_0x7fea83891018;  1 drivers
+v0x62c99f52c640_0 .net *"_ivl_4", 16 0, L_0x62c99f52cf50;  1 drivers
+L_0x7fea83891060 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x62c99f52c700_0 .net *"_ivl_7", 0 0, L_0x7fea83891060;  1 drivers
+v0x62c99f52c7e0_0 .net "a", 15 0, v0x62c99f52cb50_0;  1 drivers
+v0x62c99f52c910_0 .net "b", 15 0, v0x62c99f52cc10_0;  1 drivers
+v0x62c99f52c9f0_0 .net "c", 16 0, L_0x62c99f52d090;  alias, 1 drivers
+L_0x62c99f52cde0 .concat [ 16 1 0 0], v0x62c99f52cb50_0, L_0x7fea83891018;
+L_0x62c99f52cf50 .concat [ 16 1 0 0], v0x62c99f52cc10_0, L_0x7fea83891060;
+L_0x62c99f52d090 .arith/sum 17, L_0x62c99f52cde0, L_0x62c99f52cf50;
+    .scope S_0x62c99f51b580;
+T_0 ;
+    %pushi/vec4 69, 0, 16;
+    %store/vec4 v0x62c99f52cb50_0, 0, 16;
+    %pushi/vec4 18, 0, 16;
+    %store/vec4 v0x62c99f52cc10_0, 0, 16;
+    %delay 10, 0;
+    %vpi_call 2 24 "$display", "a = %0d, b = %0d, c = %0d", v0x62c99f52cb50_0, v0x62c99f52cc10_0, v0x62c99f52cce0_0 {0 0 0};
+    %vpi_call 2 27 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "adder_tb.v";
+    "adder.v";
